@@ -113,6 +113,28 @@ export default function LabPage() {
             </ul>
           </section>
 
+          {/* IV. Supplementary Material Bridge */}
+          <section className="pt-8 mt-12 border-t border-[#EAEAEA]">
+            <div className="flex flex-col md:flex-row justify-between items-center bg-[#FAFAFA] border border-[#EAEAEA] p-6 rounded-sm">
+              <div>
+                <h2 className="font-mono text-sm uppercase tracking-widest text-[#0055FF] mb-1">
+                  IV. Supplementary Credentials
+                </h2>
+                <p className="text-gray-600 text-sm font-labBody">
+                  Verified cloud ecosystem architectures (AWS, GCP, Azure) and institutional badges.
+                </p>
+              </div>
+              
+              {/* Bridge Button to the Studio Vault */}
+              <a 
+                href="/studio/certifications" 
+                className="mt-4 md:mt-0 px-6 py-3 border border-[#111111] text-[#111111] font-mono text-xs uppercase tracking-widest hover:bg-[#111111] hover:text-white transition-colors whitespace-nowrap"
+              >
+                Access The Vault &rarr;
+              </a>
+            </div>
+          </section>
+
         </div>
       </article>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function StudioProjectDeepDive({ params }: { params: { project: string } }) {
   // In a production build, you would fetch the specific project data using params.project
@@ -12,9 +13,19 @@ export default function StudioProjectDeepDive({ params }: { params: { project: s
         <Link href="/studio" className="text-sm font-semibold text-gray-400 hover:text-[#FF2A5F] transition-colors flex items-center gap-2">
           &larr; Back to Studio
         </Link>
-        <span className="font-mono text-sm tracking-widest text-gray-500 uppercase">
-          // Case Study
-        </span>
+        <div className="flex items-center gap-6">
+          <span className="font-mono text-sm tracking-widest text-gray-500 uppercase">
+            // Case Study
+          </span>
+          <a
+            href="https://drive.google.com/file/d/1MLmJm_WRpxBKYGKIxDXYwCg1Y7Fxks0k/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[#333333] rounded-full text-gray-300 hover:text-white hover:border-[#FF2A5F] transition-all"
+          >
+            Resume
+          </a>
+        </div>
       </nav>
 
       <main className="w-full max-w-5xl mx-auto px-6 mt-16 space-y-20 animate-in fade-in duration-700 ease-out">
@@ -47,11 +58,17 @@ export default function StudioProjectDeepDive({ params }: { params: { project: s
           </div>
         </header>
 
-        {/* Cinematic Hero Image Placeholder */}
-        <section className="w-full aspect-video bg-[#111111] border border-[#222222] rounded-xl flex items-center justify-center overflow-hidden group">
-          <p className="font-mono text-gray-500 text-sm group-hover:scale-105 transition-transform duration-500">
-            [ High-Resolution UI Mockup / Dashboard Screenshot Goes Here ]
-          </p>
+        {/* Cinematic Hero Image */}
+        <section className="relative w-full aspect-video border border-[#222222] rounded-xl overflow-hidden group shadow-2xl">
+          <Image 
+            src="/projects/nanighar.jpg" // In a real build, this comes dynamically from the data
+            alt="Nanighar Dashboard UI"
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            priority // Tells Next.js to load this image instantly for above-the-fold content
+          />
+          {/* Subtle vignette overlay to blend the edges */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_50%,_#0A0A0A_120%)] pointer-events-none z-10" />
         </section>
 
         {/* The Narrative Grid */}
@@ -92,6 +109,6 @@ export default function StudioProjectDeepDive({ params }: { params: { project: s
         </section>
 
       </main>
-    </div>
+    </article>
   );
 }

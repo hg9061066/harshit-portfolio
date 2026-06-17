@@ -26,23 +26,11 @@ export default function Footer() {
     <footer className={`w-full border-t ${theme.border} ${theme.background} transition-colors duration-700 py-12`}>
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 
-        {/* Left Side: Identity & Resume Action */}
+        {/* Left Side: Identity */}
         <div className="flex flex-col md:flex-row items-center gap-6">
           <span className={`font-mono text-sm tracking-widest uppercase ${theme.textPrimary} transition-colors duration-700`}>
             // Harshit Gupta
           </span>
-
-          {/* Subtle separator line */}
-          <div className={`hidden md:block h-4 w-px transition-colors duration-700 ${isLab ? "bg-gray-300" : "bg-[#333333]"}`}></div>
-
-          <a
-            href="https://drive.google.com/file/d/1MLmJm_WRpxBKYGKIxDXYwCg1Y7Fxks0k/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`font-mono text-xs uppercase tracking-widest px-6 py-3 border rounded-full transition-all duration-300 ${theme.buttonLine}`}
-          >
-            Download Resume
-          </a>
         </div>
 
         {/* Right Side: Professional Network */}

@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Add this to justify all paragraph text globally */
+@layer base {
+  p {
+    @apply text-justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

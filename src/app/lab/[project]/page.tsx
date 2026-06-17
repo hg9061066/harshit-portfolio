@@ -44,7 +44,7 @@ export default async function ProjectDeepDive({ params }: { params: Promise<{ pr
 
         {/* LaTeX Math Block for rigorous deep tech representation */}
         <div className="bg-gray-50 py-6 px-4 rounded border border-gray-200 text-center overflow-x-auto my-6">
-          $$w_{t + 1} = \sum_{k = 1}^K \frac{n_k}{n} w_{t + 1}^k$$
+          {`$$w_{t + 1} = \\sum_{k = 1}^K \\frac{n_k}{n} w_{t + 1}^k$$`}
         </div>
       </section>
 
