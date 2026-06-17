@@ -6,7 +6,7 @@ export default function StudioProjectDeepDive({ params }: { params: { project: s
   // For this template, we will structure it around the Nanighar build.
 
   return (
-    <article className="min-h-screen bg-[#0A0A0A] text-[#EDEDED] font-sans pb-24 selection:bg-[#FF2A5F] selection:text-white">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#EDEDED] font-sans pb-24 selection:bg-[#FF2A5F] selection:text-white">
       
       {/* Studio Navigation */}
       <nav className="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center border-b border-[#333333]">
@@ -29,7 +29,7 @@ export default function StudioProjectDeepDive({ params }: { params: { project: s
       </nav>
 
       <main className="w-full max-w-5xl mx-auto px-6 mt-16 space-y-20 animate-in fade-in duration-700 ease-out">
-        
+        <article>
         {/* Header & Metadata */}
         <header className="space-y-8">
           <h1 className="font-studioHeading text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.9]">
@@ -108,7 +108,8 @@ export default function StudioProjectDeepDive({ params }: { params: { project: s
           </div>
         </section>
 
+        </article> {/* <-- YOU ARE MISSING THIS TAG */}
       </main>
-    </article>
+    </div>
   );
 }
