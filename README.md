@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Anthology Architecture: A Dual-Theme Next.js Portfolio
 
-## Getting Started
+A sophisticated, dynamically routed portfolio built to bridge the gap between rigorous machine learning research and high-fidelity frontend engineering. 
 
-First, run the development server:
+Rather than forcing disparate professional identities into a single aesthetic, this architecture introduces **The Anthology Concept**: a split-environment UI that actively adapts to the context of the data being presented.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏗 The Anthology Concept
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This platform is divided into two distinct, context-aware environments handled dynamically via Next.js routing and Tailwind CSS theming:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **[ The Lab ]** (`/lab`): A clean, LaTeX-inspired light theme. Built strictly for high-information density. It houses distributed systems architectures, federated learning research, differential privacy math, and intellectual property (patents). 
+* **[ The Studio ]** (`/studio`): A cinematic, high-contrast dark theme. Built for visual execution. It features masonry grids, timeline layouts, and interactive case studies for full-stack builds, UI/UX architecture, and digital narrative engines.
+* **The Chameleon Footer**: A global, state-aware component that listens to the active route via `usePathname()` and seamlessly transitions color palettes to match the user's current environment.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💻 Tech Stack
 
-## Learn More
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Theme Management:** `next-themes` (For seamless, flicker-free Light/Dark mode transitions)
+* **Typography:** Inter (Sans), Merriweather (Serif), Fira Code (Mono)
+* **Deployment:** [Vercel](https://vercel.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Core Directory Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application heavily utilizes Next.js dynamic routing to generate dedicated case study pages for both research and frontend projects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+└── app/
+    ├── layout.tsx              # Global layout & Theme Provider wrapper
+    ├── page.tsx                # The Split-Screen Index Gateway
+    ├── lab/
+    │   ├── layout.tsx          # Enforces the 'LaTeX' light theme
+    │   ├── page.tsx            # Academic Dossier (Patents, Publications)
+    │   └── [project]/page.tsx  # Dynamic deep dives (e.g., TriModal FloodNet)
+    ├── studio/
+    │   ├── layout.tsx          # Enforces the 'Graphic Novel' dark theme
+    │   ├── page.tsx            # Professional Timeline & Visual Grid
+    │   └── [project]/page.tsx  # Dynamic case studies (e.g., Nanighar, AstroSite)
+    └── components/
+        ├── Footer.tsx          # Dynamic Chameleon Footer
+        ├── ThemeProvider.tsx   # Next-Themes configuration
+        └── lab/                # Custom UI components (Accordions, Code Blocks)
