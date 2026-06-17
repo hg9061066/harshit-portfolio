@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-lab-bg: #FAFAFA;
+  --color-lab-text: #111111;
+  --color-lab-accent: #0055FF;
+  --color-lab-border: #EAEAEA;
+
+  --color-studio-bg: #0A0A0A;
+  --color-studio-text: #EDEDED;
+  --color-studio-accent: #FF2A5F;
+  --color-studio-border: #333333;
+
+  --font-labHeading: var(--font-labHeading);
+  --font-labBody: var(--font-labBody);
+  --font-mono: var(--font-mono);
+  --font-studioHeading: var(--font-studioHeading);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,8 +27,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-labBody);
+  --font-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
